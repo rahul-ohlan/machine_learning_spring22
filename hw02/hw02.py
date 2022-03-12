@@ -186,13 +186,9 @@ def updateRuleFast(X, y, w):
     grad_vector = np.zeros(cols) # reset updates
     for i in range(rows):
         
-        
-        for j in range(cols):
+        yi = y[i]
             
-            xj = X[i][j]
-            yi = y[i]
-            
-            grad_vector[j] += xj*(yi - sigmoid(w,X[i])) # calculating gradients based on all of dataset
+        grad_vector += X[i]*(yi - sigmoid(w,X[i])) # calculating gradients based on all of dataset
             
     
     
